@@ -1,0 +1,29 @@
+name: "02 conditional steps"
+
+on:
+  workflow_dispatch:
+
+jobs:
+  example_job:
+    runs-on: ubuntu-latest
+  steps:
+  - name: step 1 - exit code 0
+    id: successful_step
+    run: |
+        echo "exit code 0"
+        exit 0 
+    shell: bash 
+  - name: step 2 - execute if succeeded
+    if: ${{success()}}
+    run: |
+         echo "ran becuause this succeeded"
+  - name: step 3 - will fail 
+    run: exit 1    
+  - name: step 4 - will not execute
+    run: |
+         echo "didnt run"
+  - name: step 5 - on failure
+    if: ${{failure()}}
+    run: | 
+          echo "ran with failure"
+          

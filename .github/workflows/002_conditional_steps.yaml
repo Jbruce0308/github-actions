@@ -15,7 +15,7 @@ jobs:
     - name: step 1 - exit code 0
       id: successful_step
       run: |
-          echo "hello {{inputs.username}} we are in exit code 0"
+          echo "hello ${{inputs.username}} we are in exit code 0"
           exit 0 
       shell: bash 
     - name: step 2 - execute if succeeded

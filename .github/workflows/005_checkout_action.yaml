@@ -6,15 +6,15 @@ on:
 
 jobs:
   list_files:
-    runs-on: ubuntu
+    runs-on: ubuntu-latest
 
     steps:
       - name: list files
-        run: ls -la ${{ github_workspace }}
+        run: ls -la ${{ github.workspace }}
 
       - name: checkout source_code
         uses: actions/checkout@v6
-        
+
       
       - name: list files in directory
-        run: ls -la ${{ github_workspace }}
+        run: ls -la ${{ github.workspace }}

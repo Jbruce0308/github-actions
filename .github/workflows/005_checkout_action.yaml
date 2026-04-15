@@ -1,0 +1,19 @@
+name: "checkout action"
+
+on:
+  workflow_dispatch:
+
+
+jobs:
+  list_files:
+    runs-on: ubuntu
+
+    steps:
+      - name: list files
+        run: ls -la ${{ github_workspace }}
+
+      - name: checkout source_code
+        uses: checkout/action@v6
+      
+      - name: list files in directory
+        run: ls -la ${{ github_workspace }}

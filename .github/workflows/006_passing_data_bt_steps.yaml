@@ -9,11 +9,9 @@ jobs:
     
     steps:
       - name: create data
-        steps:
-          - name: create data
-            id: sender
-            run: |
-                echo "name=bruce" >> $GITHUB_OUTPUT
-          - name: receive data
-            run: |
-              echo ${{steps.sender_step_outputs.name}}
+        id: sender
+        run: |
+           echo "name=bruce" >> $GITHUB_OUTPUT
+      - name: receive data
+        run: |
+           echo ${{steps.sender_step_outputs.name}}

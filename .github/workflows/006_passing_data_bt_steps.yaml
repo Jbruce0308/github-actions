@@ -5,14 +5,14 @@ on:
 
 jobs:
   data-passing:
-  runs-on: ubuntu-latest
-  steps:
-   - name: create data
-     steps:
-      - name: create data
-        id: sender
-        run: |
-            echo "name=bruce" >> $GITHUB_OUTPUT
-      - name: receive data
-        run: |
-          echo ${{steps.sender_step_outputs.name}}
+    runs-on: ubuntu-latest
+    steps:
+    - name: create data
+      steps:
+        - name: create data
+          id: sender
+          run: |
+              echo "name=bruce" >> $GITHUB_OUTPUT
+        - name: receive data
+          run: |
+            echo ${{steps.sender_step_outputs.name}}

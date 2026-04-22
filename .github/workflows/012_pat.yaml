@@ -13,7 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4 #always check from the main branch
       with:
-        ref: $$ {{ github.event.pull_request.merge_commit_sha }} # to get the code from the specific  commit from the recent pr
+        ref: ${{ github.event.pull_request.merge_commit_sha }} # to get the code from the specific  commit from the recent pr
         fetch-depth: '0'
 
     - name: Bump version and push tag

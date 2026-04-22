@@ -3,4 +3,4 @@
 ## content:
 - readme
 - intro
-- tst
+- test
